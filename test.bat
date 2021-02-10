@@ -2,6 +2,7 @@ set server=iperf.local
 set server=133.71.201.21
 set duration=20
 set timeout=30
+
 timeout /nobreak %timeout%
 iperf3.exe -d -u -b 10000M -t %duration% --json --get-server-output -P 1 -c %server% --logfile udp-1.log
 timeout /nobreak %timeout%
