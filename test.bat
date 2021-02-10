@@ -3,9 +3,9 @@ set server=133.71.201.21
 set duration=20
 set timeout=30
 timeout /nobreak %timeout%
-iperf3.exe -d -u -t %duration% --json --get-server-output -P 1 -c %server% --logfile udp-1.log
+iperf3.exe -d -u -b 10000M -t %duration% --json --get-server-output -P 1 -c %server% --logfile udp-1.log
 timeout /nobreak %timeout%
-iperf3.exe -d -u -t %duration% --json --get-server-output -P 2 -c %server% --logfile udp-2.log
+iperf3.exe -d -u -b 10000M -t %duration% --json --get-server-output -P 2 -c %server% --logfile udp-2.log
 timeout /nobreak %timeout%
 iperf3.exe -d -u -b 10000M -t %duration% --json --get-server-output -P 3 -c %server% --logfile udp-3.log
 timeout /nobreak %timeout%
@@ -25,9 +25,9 @@ iperf3.exe -d -u -b 10000M -t %duration% --json --get-server-output -P 10 -c %se
 
 REM UDP Reverse
 timeout /nobreak %timeout%
-iperf3.exe -d -u -r -t %duration% --json --get-server-output -P 1 -c %server% --logfile udp-r-1.log
+iperf3.exe -d -u -r -b 10000M -r -t %duration% --json --get-server-output -P 1 -c %server% --logfile udp-r-1.log
 timeout /nobreak %timeout%
-iperf3.exe -d -u -r -t %duration% --json --get-server-output -P 2 -c %server% --logfile udp-r-2.log
+iperf3.exe -d -u -r -b 10000M -r -t %duration% --json --get-server-output -P 2 -c %server% --logfile udp-r-2.log
 timeout /nobreak %timeout%
 iperf3.exe -d -u -r -b 10000M -t %duration% --json --get-server-output -P 3 -c %server% --logfile udp-r-3.log
 timeout /nobreak %timeout%
