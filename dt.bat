@@ -5,4 +5,4 @@ set t=%time:~0,2%%time:~3,2%%time:~6,2%
 set t=%t: =0%
 REM echo %t%
 set dt=%d%T%t%
-echo %dt%
+echo current datetime is %dt%
