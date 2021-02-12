@@ -6,3 +6,11 @@ set t=%t: =0%
 REM echo %t%
 set dt=%d%T%t%
 echo current datetime is %dt%
+
+REM iperf3 Settings
+set server=iperf.local
+set server=133.71.201.21
+set server=uchikonas.myqnapcloud.com
+set waitbefore=30
+set duration=20
+set timeout=30
