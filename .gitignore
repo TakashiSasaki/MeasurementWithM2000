@@ -1,4 +1,4 @@
-
-status/20210212T214758.json
-status/20210212T214854.json
-status/20210212T214905.json
+status/*.json
+test.log.json 
+tcp-*.log
+udp-*.log
