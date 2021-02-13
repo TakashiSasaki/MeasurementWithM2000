@@ -3,3 +3,5 @@ test.log.json
 tcp-*.log
 udp-*.log
 20210212T223736/P1.log
+tcp-upload/*/*.log
+tcp-download/*/*.log
