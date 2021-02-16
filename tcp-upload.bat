@@ -1,4 +1,4 @@
-REM TCP Download
+REM TCP Upload
 @echo on
 
 call dt.bat
