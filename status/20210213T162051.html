@@ -1,0 +1,2241 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="no-js ie8 oldie" lang="en-US"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en-US"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>M2000</title>
+		<link rel="stylesheet" type="text/css" href="/09140907/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/normalize.css" />
+
+<link rel="stylesheet" type="text/css" href="/09140907/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/status.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/messages.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/form.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/uniform.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/jquery-ui.min.css" />
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/09140907/css/mobile_768.css" media="screen and (max-width: 940px)" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/mobile_480.css" media="screen and (max-width: 480px)" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/mobile_320.css" media="screen and (max-width: 320px)" />
+
+
+<link rel="stylesheet" type="text/css" href="/09140907/css/look_and_feel.css" />
+
+
+
+	
+
+<link rel="stylesheet" type="text/css" href="/09140907/css/responsive.css" />
+
+<link rel="stylesheet" type="text/css" href="/09140907/css/last.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/grid.css" />
+<link rel="stylesheet" type="text/css" href="/09140907/css/app.css" />
+
+
+		
+<script type="text/javascript" src="/09140907/script/libraries/modernizr.min.js"></script>
+
+<script type="text/javascript" src="/09140907/script/jquery/jquery.js"></script>
+
+<script type="text/javascript" src="/09140907/script/jquery/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/09140907/script/mifienums.js"></script>
+<script type="text/javascript" src="/09140907/script/libraries/modalPopup.min.js"></script>
+
+<script type="text/javascript" src="/09140907/script/jquery/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/09140907/script/libraries/sha.min.js"></script>
+<script type="text/javascript" src="/09140907/script/jquery/jquery.slidebutton.min.js"></script>
+<script type="text/javascript" src="/09140907/script/jquery/jquery.moretti.statusbar.min.js"></script>
+<script type="text/javascript" src="/09140907/script/notifications.js"></script>
+
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		
+		var currentYear = new Date().getFullYear();
+		$("#copyYear").html(currentYear);
+		// Init status bar
+		$.statusBar({
+			statusBars : {
+				headerStatusBar : {
+					name : "headerStatusBar",
+					structure : {
+						statusBar_battery_grp : {
+							statusBar_battery : ["statusBarBatteryChargingSource", "statusBarBatteryChargingState", "statusBarBatteryPercent", "statusBarBatteryDetection"]
+						},
+						statusBar_connected_devices_grp : {
+							statusBar_connected_devices : ["statusBarWiFiClientListSize", "statusBarWiFiEnabled"]
+						},
+						statusBar_activity_grp : {
+							statusBar_activity : ["statusBarTrafficStatus"]
+						},
+						statusBar_tech_grp : {
+							statusBar_tech : ["statusBarTechnology", "statusBarTechnologyText"]
+						},
+						statusBar_sim_grp : {
+							statusBar_sim : ["statusBarSimStatus", "statusBarSimCarrierBlockedStatus", "statusBarConnectionState"]
+						},
+						statusBar_network_grp : {
+							statusBar_network : ["statusBarNetwork", "statusBarNetworkID"],
+							statusBar_rssi : ["statusBarSignalBars"]							
+						},
+						statusBar_roamingFemto_grp : {
+							statusBar_femto_roam : ["statusBarFemtoCellStatus", "statusBarRoaming"]
+						},
+						statusBar_airplane_grp : {
+							statusBar_airplane : ["statusBarAirplaneMode"]
+						},
+						statusBar_ethernet_grp : {
+							statusBar_ethernet : ["statusBarEthernetPortEnabled"]
+						}
+					}
+				},
+				mobileStatusBar : {
+					name : "mobileStatusBar",
+					structure : {						
+						mobile_statusBar_ethernet_grp : {
+							mobile_statusBar_ethernet : ["statusBarEthernetPortEnabled"]
+						},
+						mobile_statusBar_airplane_grp : {
+							mobile_statusBar_airplane : ["statusBarAirplaneMode"]
+						},
+						mobile_statusBar_roamingFemto_grp : {
+							mobile_statusBar_femto_roam : ["mobileStatusBarFemtoCellStatus", "mobileStatusBarRoaming"]
+						},								
+						mobile_statusBar_network_grp : {
+							mobile_statusBar_network : ["mobileStatusBarNetwork", "mobileStatusBarNetworkID"],
+							mobile_statusBar_rssi : ["statusBarSignalBars"]
+						},
+						mobile_statusBar_sim_grp : {
+							mobile_statusBar_sim : ["statusBarSimStatus", "statusBarSimCarrierBlockedStatus", "statusBarConnectionState"]
+						},				
+						mobile_statusBar_tech_grp : {
+							mobile_statusBar_tech : ["statusBarTechnology", "statusBarTechnologyText"]
+						},
+						mobile_statusBar_activity_grp : {
+							mobile_statusBar_activity : ["statusBarTrafficStatus"]
+						},
+						mobile_statusBar_connected_devices_grp : {
+							mobile_statusBar_connected_devices : ["statusBarWiFiClientListSize", "statusBarWiFiEnabled"]
+						},	
+						mobile_statusBar_battery_grp : {
+							mobile_statusBar_battery : ["statusBarBatteryChargingSource", "statusBarBatteryChargingState", "statusBarBatteryPercent", "statusBarBatteryDetection"]
+						}
+					}
+				}
+			},
+			simNoSimText            : 'No SIM',
+			simPinLockedText        : 'SIM is PIN locked',
+			simPukLockedText        : 'SIM is PUK locked',
+			simInvalidText          : 'Invalid SIM',
+			simErrorText            : 'SIM error',
+			wanNoServiceText        : 'No Service',
+			wanSearchingText        : 'Searching',
+			connectedDevicesMaxText : 'Max',
+			successCallback         : statusBarSuccess,
+			errorCallback           : statusBarError,
+			timeoutCallback         : statusBarError
+		});
+
+		$( ".tooltip-help" ).tooltip({
+			tooltipClass: "uitooltip",
+			position: {
+				my: "left top",
+				at: "right+5 top-5"
+			},
+			open: function() {
+					$(this).removeAttr( "title" );
+			}
+		});
+		
+		$(".ui-helper-hidden-accessible").css({"position": "absolute", "left":"-999em"});
+
+		var animationDuration = 100;
+		var tier1Items = $(".tier_1 #navigationTabsOne .tabitem");
+		var tier1StartPosition = 0;
+		var tier1EndPosition = 0;
+		var totalTier1TabsWidth = 0;
+		var tier1TabsWidthArray = [];
+		var tier1TabsWidth = $(".tier_1 .tabs").width();
+		var tier1HasActiveClass = false;
+		tier1Items.each(function(idx, element) {
+			tier1TabsWidthArray.push($(this).outerWidth(true));
+			totalTier1TabsWidth += $(this).outerWidth(true);
+
+			if (totalTier1TabsWidth < tier1TabsWidth) {
+				tier1EndPosition += 1;
+				if (!tier1HasActiveClass) {
+					tier1HasActiveClass = $(this).hasClass("active");
+				}
+			}
+
+		});
+
+		if(totalTier1TabsWidth < tier1TabsWidth) {
+			$("#tier1.arrow").css("display", "none");
+		} else {
+			$("#tier1.right-move").click(function() {
+				if (tier1EndPosition != tier1TabsWidthArray.length) {
+					var movableWidth = 0;
+					for (var i = tier1StartPosition; i < tier1EndPosition; i++) {
+						movableWidth += tier1TabsWidthArray[i];
+					}
+
+					tier1Items.animate({"left": "-=" + movableWidth + "px"}, animationDuration);
+
+					tier1StartPosition = tier1EndPosition;
+					tier1Items.each(function(idx, element) {
+						if (idx == tier1StartPosition && totalTier1TabsWidth < tier1TabsWidth) {
+							tier1EndPosition = tier1StartPosition + 1;
+						}
+					});
+				}
+			});
+
+			$("#tier1.left-move").click(function() {
+				if (tier1StartPosition != 0) {
+					var movableWidth = 0;
+					tier1EndPosition = tier1StartPosition;
+					var newtier1StartPosition = 0;
+					for (var i = tier1StartPosition - 1; i >= 0; i--) {
+						if (movableWidth <= tier1TabsWidth) {
+							movableWidth += tier1TabsWidthArray[i];
+							newtier1StartPosition = i;
+						}
+					}
+
+					tier1Items.animate({"left": "+=" + movableWidth + "px"}, animationDuration);
+					tier1StartPosition = newtier1StartPosition;
+				}
+			});
+		}
+
+		if (!tier1HasActiveClass) {
+			$("#tier1.right-move").trigger("click");
+		}
+
+		var tier2Items = $(".tier_2 #navigationTabsTwo .tabitem");
+		var tier2StartPosition = 0;
+		var tier2EndPosition = 0;
+		var totalTier2TabsWidth = 0;
+		var tier2TabsWidthArray = [];
+		var tier2TabsWidth = $(".tier_2 .tabs").width();
+		var tier2HasActiveClass = false;
+		tier2Items.each(function(idx, element) {
+			if (!$(this).hasClass("settings-advanced-bengal-advanced")) {
+				tier2TabsWidthArray.push($(this).outerWidth(true));
+				totalTier2TabsWidth += $(this).outerWidth(true);
+				if (totalTier2TabsWidth < tier2TabsWidth) {
+					tier2EndPosition += 1;
+					if (!tier2HasActiveClass) {
+						tier2HasActiveClass = $(this).hasClass("active");
+					}
+				}
+			}
+		});
+
+		if(totalTier2TabsWidth < tier2TabsWidth) {
+			$("#tier2.arrow").css("display", "none");
+		} else {
+			$("#tier2.right-move").click(function(){
+				if (tier2EndPosition != tier2TabsWidthArray.length) {
+					var movableWidth = 0;
+					for (var i = tier2StartPosition; i < tier2EndPosition; i++) {
+						movableWidth += tier2TabsWidthArray[i];
+					}
+
+					tier2Items.animate({"left": "-=" + movableWidth + "px"}, animationDuration);
+
+					tier2StartPosition = tier2EndPosition;
+					tier2Items.each(function(idx, element) {
+						if (idx == tier2StartPosition && totalTier2TabsWidth < tier2TabsWidth) {
+							tier2EndPosition = tier2StartPosition + 1;
+						}
+					});
+				}
+		    });
+		    
+		    $("#tier2.left-move").click(function(){
+				if (tier2StartPosition != 0) {
+					var movableWidth = 0;
+					tier2EndPosition = tier2StartPosition;
+					var newtier2StartPosition = 0;
+					for (var i = tier2StartPosition - 1; i >= 0; i--) {
+						if (movableWidth <= tier2TabsWidth) {
+							movableWidth += tier2TabsWidthArray[i];
+							newtier2StartPosition = i;
+						}
+					}
+
+					tier2Items.animate({"left": "+=" + movableWidth + "px"}, animationDuration);
+					tier2StartPosition = newtier2StartPosition;
+				}
+		    });
+		}
+
+	    if (!tier2HasActiveClass) {
+			$("#tier2.right-move").trigger("click");
+		}
+		
+	});
+
+	
+
+	// statusBar ajax success callback.
+	function statusBarSuccess()
+	{
+		$("#status_bar").show();
+		
+	}
+
+	// statusBar ajax error/timeout callback.
+	function statusBarError()
+	{
+		$("#status_bar").hide();
+		if (typeof notifications !== "undefined") notifications.showMiFiUnreachableMessage();
+		
+	}
+
+	// Open and close mobile slide out panels.
+	function toggleMobilePanels($el, scrollToTop)
+	{
+		if (typeof scrollToTop === "undefined") scrollToTop = false;
+		var $otherPanels = $(".mobile_panel").not($el);
+		var panelWidth = "-" + $el.outerWidth(true) + "px";
+		if ($("html").hasClass("rtl")) {
+			var cssOptions = { "left" : panelWidth, "display" : "block" };
+			var animOptionsShow = { "left" : "0px" };
+			var animOptionsHide = { "left" : panelWidth };
+		} else {
+			var cssOptions = { "left" : panelWidth, "display" : "block" };
+			var animOptionsShow = { "left" : "0px" };
+			var animOptionsHide = { "left" : panelWidth };
+		}
+		if ($el.is(":hidden")) {
+			$el.css(cssOptions);
+			setTimeout(function(){
+				$el.animate(animOptionsShow, {
+					duration: 150,
+					complete : function(){
+						closeMobilePanels($otherPanels, scrollToTop);
+					}
+				});
+			}, 20);
+		} else {
+			$el.animate(animOptionsHide, {
+				duration: 150,
+				complete : function(){
+					setTimeout(function(){
+						$el.hide(0);
+					}, 20);
+					closeMobilePanels($otherPanels, scrollToTop);
+				}
+			});
+		}
+	}
+
+	// Close mobile slide out panels.
+	function closeMobilePanels($el, scrollToTop)
+	{
+		$el.each(function(i) {
+			var $myEl = $(this);
+			if (!$myEl.is(":hidden")) {
+				var panelWidth = "-" + $myEl.outerWidth(true) + "px";
+				if ($("html").hasClass("rtl")) {
+					var animOptionsHide = { "left" : panelWidth };
+				} else {
+					var animOptionsHide = { "left" : panelWidth };
+				}
+				$myEl.animate(animOptionsHide, {
+					duration: 150,
+					complete : function(){
+						setTimeout(function(){
+							$myEl.hide(0);
+							if (scrollToTop) window.scrollTo(0, 0);
+						}, 20);
+					}
+				});
+			}
+		});
+	}
+
+	// For tables that are wider than the display, we need to be able to scroll the table horizontally.
+	// This function works with a div wrapped around a table. This div uses the class "wideTableWrapper".
+	// The wrapper div needs to determine its width dynamically. This function determines this width based on the parent div.
+	function adjustWideTableWrap($wrapper, $parent)
+	{
+		var ws = $(window).width();
+		$wrapper.width($parent.width());
+		$(window).on("resize", function() {
+			if ( ws != $(window).width() ) {
+				ws = $(window).width();
+				$wrapper.width($parent.width());
+			}
+		});
+	}
+
+	$(function()
+	{
+		// Determine wideTableWrap div width dynamically.
+		adjustWideTableWrap($("div.wideTableWrap"), $("div.wideTableWrap").parents("div"));
+
+		// Add status bars to page
+		$("#status_bar").statusBar("attach", "headerStatusBar");
+		$("#mobile_status_bar").statusBar("attach", "mobileStatusBar");
+
+		// Open and close mobile menu panel.
+		$("#toggle_mobile_menu").on("click", function(e) {
+			toggleMobilePanels($("#mobile_menu"));
+			$(this).toggleClass("opened closed");
+		});
+
+		// Close Mobile Panels when help/login/logout/adminsettings/restart/messages link is clicked.
+		$("#mobile_menu .helpLink, #mobile_menu .login, #mobile_menu .logout,  #mobile_menu .admin_settings,  #mobile_menu .restart_jetpack,  #mobile_menu #messages").on("click", function(e) {
+			e.preventDefault();
+			closeMobilePanels($("#mobile_menu"), false);
+			$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+		});
+
+		// Close mobile panels when clicking outside of them.
+		$(document).on("click", function(e) {
+			var container = $(".mobile");
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				closeMobilePanels($("#mobile_menu"), false);
+				$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+			}
+		});
+
+		// Hide mobile menu on window width resize, in case the menu is visible when the user changes orientation.
+		var windowsize = $(window).width();
+		$(window).on("resize", function() {
+			if (windowsize != $(window).width()) {
+				$("#mobile_menu").hide(0);
+				$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+				windowsize = $(window).width();
+			}
+		});
+
+		// Menu Accordion.
+		$("#mobile_navigation a.parent").on("click", function(e) {
+			e.preventDefault();
+			var closer = ($("html").hasClass("rtl")) ? "left" : "right";
+			var $icon = $(this).find("span.indicator");
+			var $target = $(this).next("ul");
+			var level = $target.attr("class");
+			var $siblings = $(this).closest("ul").find("ul." + level);
+			var $nonTargetSiblings = $siblings.not($target);
+			if ($target.is(":visible")) {
+				$icon.removeClass("down active").addClass(closer);
+				$target.slideUp();
+			} else {
+				$siblings.prev("a.parent").find("span.indicator").removeClass("down active").addClass(closer);
+				if ($nonTargetSiblings.length == 0) {
+					$icon.removeClass(closer + " active").addClass("down");
+					$target.slideDown();
+				} else {
+					$nonTargetSiblings.slideUp(400, function() {
+					$icon.removeClass(closer + " active").addClass("down");
+					$target.slideDown();
+					});
+				}
+			}
+		});
+
+		// Uniform Init -- We're using Uniform 2+.
+		if(jQuery.uniform) {
+			var uniEl = "select, textarea, input:not(.toggleSettingContainer input:checkbox)";
+
+			// As of Uniform 2+, only properties of $.uniform.defaults will be global.
+			$.uniform.defaults.selectAutoWidth = false;
+			$.uniform.defaults.resetSelector = 'input[type="reset"]';
+			$.uniform.defaults.fileButtonHtml = 'Browse';
+			$.uniform.defaults.fileDefaultHtml = 'No file selected';
+			$.uniform.defaults.filter = uniEl;
+
+			// Instantiate Uniform on page load.
+			$(uniEl).uniform();
+
+			// If using uniform on buttons, we need to add the button element class to the div wrapper.
+			$("button.primary").closest("div.button").addClass("primary");
+			$("button.secondary").closest("div.button").addClass("secondary");
+			$("button.multi").closest("div.button").addClass("multi");
+			$("button.cancel").closest("div.button").addClass("cancel");
+		}
+
+		// If Internet Explorer is in compatibility mode or IE7, display a warning.
+		if( (navigator.userAgent.indexOf("MSIE 7.0") > -1)
+			|| ( (document.documentMode) && (document.documentMode == 7) ) ) {
+			modalPopup.createWindow(
+				'Browser Compatibility Warning',
+				'<p>The MiFi M2000 web interface does not support Internet Explorer 7 or Compatibility Mode. Either upgrade your browser or turn Compatibility Mode off.</p>',
+				430, 300,
+				[
+					{
+						text : 'OK',
+						className : "primary"
+					}
+				]
+			);
+		}
+
+		// Add events to all of our help links to open a modal popup displaying help information
+		$(document).on("click","a.helpLink, a.helpBtn, a.helpAnchor", function(e) { 
+				e.preventDefault();
+			// Add an element for help
+			var url = $(this).attr("href");		
+			var loadUrl = url.replace(/#/, " #");
+			var hw = $('<div id="help_wrapper"></div>').appendTo('body').load(loadUrl, function(response, status, xhr) {
+				if (status === "error") {
+					$(this).html('<p>Help content not found.</p>');
+				}
+
+				modalPopup.createWindow(
+					'Help',
+					$(this),
+					750, 'auto',
+					[],
+					null,
+					function() { hw.remove(); }
+				);
+			});
+		});
+
+		//Adding a class to check box parent
+		$('input[type="checkbox"]').parents('.input').addClass('m_chkbox_widthauto');
+
+		fixedFooter(); // Call on Body Load
+		Breadcrumb();
+		$(window).bind('resize', function() {
+			// Call on Body Resize
+			fixedFooter();
+			Breadcrumb();
+		});
+
+		function fixedFooter() 
+		{
+			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+			if (!isMobile) {
+				// Check #main Height and align Footer at the Bottom
+				var $mainHeight = $("#main").height();
+				if ($mainHeight <= 600) {
+					$(".footer").addClass("footer_fixed");
+					$("#main").css("padding-bottom","86px")
+				} else{
+					$(".footer").removeClass("footer_fixed");
+					$("#main").css("padding-bottom","inherit")
+				}
+			}
+		}
+		function Breadcrumb() {
+			var bodyID = $("body").attr("id");
+			if (bodyID != "apps_home") {
+				/* Breadcrumb for Mobile UI */
+				$(".breadcrumb").remove();
+				if ($('#mobile_status_area').is(":visible")) {
+					//Home
+					var homelinkText = $('.menu-home-mobile.first').find('a').text().split(" ").pop(); //TODO Validate with RTL
+					var home = '<a href ="/">' + homelinkText + '</a>'
+					var r = /<(\w+)[^>]*>.*<\/\1>/gi;
+					if ($("#mobile_navigation").find("li.parent.active").length > 0 ) {
+						var url = $("#mobile_navigation").find("li.parent.active").find("a.parent").attr("href");
+						var menuLink = $("#mobile_navigation").find("li.parent.active").find("a.parent").html().replace(r, "");
+					}
+					var activeParent = '<a href ="' + url + '">' + menuLink + '</a>'
+					var homeLink = "" + home + "&nbsp;&raquo;&nbsp;" + activeParent + "";
+
+					// console.log(homeLink);
+					if (!url) {
+						homeLink = home;
+					}
+					$("#pageHeadCol").append('<div class="breadcrumb">' + homeLink + '</div>');
+					var activeTab;
+					var menuLength = $("ul[id^='navigationTabs']").length;
+					if (!menuLength) {
+						activeTab = $("h1.pageHead").text();
+						$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+					} else {
+						if (menuLength > 1) {
+							$("ul[id^='navigationTabs']").each(function (i) {
+								if (i > 0) {
+									activeTab = $(this).find('li.active a').html();
+									$("h1.pageHead").html(activeTab); // Change H1 to Active Section
+								} else {
+									activeTab = $(this).find('li.active').html();
+								}
+								$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+							});
+						} else {
+							$("ul[id^='navigationTabs']").each(function (i) {
+								activeTab = $(this).find('li.active a').html();
+								$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+								$("h1.pageHead").html(activeTab); // Change H1 to Active Section
+							});
+						}
+					}
+				}
+			}
+		}
+	});
+/* ]]> */
+</script>
+
+
+
+
+	</head>
+	<body id="status_diagnostics" class="tabbed_page">
+		<div id="container">
+			<div id="container_inner">
+				<div class="notifications_wrapper global">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var mifidisconnectlist = [{
+			"id" : "noResponse",
+			"title" : ' ',
+			"severity" : "critical",
+			"text" : 'Connection to the MiFi has been lost. Please check your Wi-Fi connection.'
+		}];
+		/* ]]> */
+	</script>
+</div>  
+
+
+<!--
+
+-->
+
+				<script type="text/javascript">
+	var loginStatus = 0;
+	var homeUrl = "/" 
+	$(function()
+	{
+		
+
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+				if ((xhr.responseText) && (settings.dataType == "json")) {
+					try {
+						var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+						if (typeof obj.loginStatus !== "undefined") {
+							var loginValue = obj.loginStatus;
+							if(loginStatus === 1 && loginValue === 0){
+								showLoginDialog('<p>Your session has expired, and you have been signed out. <br>Click OK to return to the Home screen.</p>');
+							}
+							loginStatus = obj.loginStatus;
+						}
+
+					} catch(e) {}
+				}
+		});
+	});
+
+	function showLoginDialog(msg)
+	{
+		modalPopup.createWindow('Alert', msg, 430, "auto", [{
+			text : 'OK',
+			className : "primary",
+            trigger : function() {
+            	location.replace(homeUrl);
+
+            }
+		}], null, function(){
+                location.replace(homeUrl);
+
+        });
+	}
+
+	/* ]]> */
+</script>
+
+<div id="header">
+	<div id="header_inner" class="clearfix">
+		<a id="carrier_logo" href="/" title="Return to My MiFi Home">
+			<img src="/09140907/images/logos/header_logo.png" alt="Inseego" />
+			<div class="row clearfix">
+				<div class="col productName">
+					<h3> </h3>
+				</div>
+				<div class="col productNumber">
+					<h3>M2000</h3>
+				</div>
+			</div>
+		</a>
+		<div id="status_area">
+			
+				<div id="status_login" class="status clearfix">
+					<a id="admin_menu">
+						
+							<h4  id="logout">Sign Out</h4>
+						
+					</a>
+					<span id="administrator" class="closed"></span>
+				</div>
+				<div class="sub_menu">
+					<script type="text/javascript">
+	var smsTitle = 'Messages'; 
+	var loginClicked = false;
+
+	$(function()
+	{
+		// Menu Accordion.
+		$("#administrator").on("click", function() 
+		{
+			showHideAdminMenu();
+		});
+
+		$("#restart_jetpack, .restart_jetpack").on("click", function() 
+		{
+			showHideAdminMenu();
+			var msg = '<p>Restart MiFi?<br>All devices will lose their connections.</p>';
+			var url = '/restarting/';
+			showModal(msg, url);
+		});
+
+		$("#logout, .logout").on("click", function() 
+		{
+			if ($(".sub_menu").hasClass("active_sub_menu")) {
+				showHideAdminMenu();
+			}
+			var msg = '<p>Sign out? <br>Are you sure you want to sign out?</p>';
+			var url = '/logout/';
+			showModal(msg, url);
+		});
+
+		$("#sms, #messages").on("click", function() 
+		{
+			var width = 700;
+			var height = "auto";
+			showHideAdminMenu();
+			var url = '/sms/';
+			
+				var title = 'Messages';
+				loadHtmlPage(title, url);
+			
+		});
+
+		$("#admin_settings, .admin_settings").on("click", function() 
+		{
+			var width = 700;
+			var height = "auto";
+
+			showHideAdminMenu();
+			var url = '/adminpassword/';
+			
+			
+				var title = 'Admin Settings';
+			
+			loadHtmlPage(title, url, width, height);
+		});
+
+		$("#login, .login").on("click", function() 
+		{
+			if(!loginClicked) {
+				loginClicked = true;
+				var width = 700;
+				var height = "auto";
+				if ($(".sub_menu").hasClass("active_sub_menu")) {
+					showHideAdminMenu();
+				}
+				var url = '/login/';
+				var title = 'Sign In';
+				var open = null;
+				var close = function() {
+					loginClicked = false;
+				}
+				loadHtmlPage(title, url, width, height, null, close);
+			}
+		});
+		
+		$(document).click(function (e) {
+			// Check if click was triggered on or within #status_login
+			if ($(e.target).closest("#status_login").length > 0) {
+				return false;
+			}
+
+			if ($(".sub_menu").hasClass("active_sub_menu")) {
+				$(".sub_menu").removeClass("active_sub_menu");
+				$("#administrator").addClass("closed").removeClass("opened");
+			}
+		});
+	});
+
+	function showHideAdminMenu()
+	{
+		if ($(".sub_menu").hasClass("active_sub_menu")) {
+			$(".sub_menu").removeClass("active_sub_menu");
+			$("#administrator").addClass("closed").removeClass("opened");
+			$("#header").css("overflow", "hidden");
+			$("a.helpLink").css("position","unset");
+		} else {
+			$(".sub_menu").addClass("active_sub_menu");
+			$("#administrator").addClass("opened").removeClass("closed");
+			$("#header").css("overflow", "visible");
+		}
+	}
+
+	function showModal(msg, url)
+	{
+		modalPopup.createWindow(
+			'Confirm',
+			msg,
+			430, 200,
+			[
+				{
+					text: 'Cancel',
+					className: "cancel"
+				},
+				{
+					text: 'Confirm',
+					className: "primary",
+					trigger: function(){
+						location.replace(url);
+					}
+				}
+			]
+		);
+	}
+
+	function loadHtmlPage(title, url, popupWidth, poputHeight, open, close)
+	{
+		var width = popupWidth || 900;
+		var height = poputHeight || 700;
+		var open = open || function(){};
+		var close = close || function() {};
+
+		modalPopup.loadPage(
+			title,
+			url,
+			width, 
+			height,
+			null, 
+			open, 
+			function() {
+				close();
+				if(typeof gRedirectUrl != 'undefined'&& gRedirectUrl != ""){
+					location.replace('') 
+				}
+			},
+			true
+		);
+	}
+
+	/* ]]> */
+</script>
+<ul id="admin_navigation">
+	
+		<li id="sms">Messages</li>
+	
+	
+		<li id="admin_settings">Admin Settings</li>
+	
+	<li id="restart_jetpack">Restart Device</li>
+</ul>
+
+				</div>
+			
+
+			<div id="status_bar" class="clearfix"></div>
+		</div><!-- /#status_area -->
+
+		<div id="mobile_status_area" class="status clearfix">
+			<div id="mobile_status_area_inner">
+				<ul id="header_mobile_menu" class="status clearfix">
+					
+						<li class="mobile">
+							<a id="toggle_mobile_menu" class="closed" href="#">menu</a>
+						</li>
+					
+				</ul>
+
+				<div id="mobile_status_bar" class="clearfix"></div>
+			</div>
+		</div> <!-- /#mobile_status_area-->
+	</div><!-- /#header-inner -->
+</div><!-- /#header -->
+
+
+	<div id="mobile_menu" class="mobile mobile_panel">
+		<div id="mobile_menu_inner">
+			<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		// Monitor and update badge counts in menu.
+		var $navConnDev = $("#mobile_navigation li.connected-devices");
+		var $navSMS = $("#mobile_navigation li.messages");
+
+		$(document).ajaxSuccess(function(e, xhr, settings)
+		{
+			if((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+					if((typeof obj.statusData.statusBarMaxWiFiClientListSize !== "undefined") &&
+					   (typeof obj.statusData.statusBarClientListSize !== "undefined")) {
+					   	if((parseInt(obj.statusData.statusBarMaxWiFiClientListSize) != 0) && !isNaN((parseInt(obj.statusData.statusBarMaxWiFiClientListSize))) && (parseInt(obj.statusData.statusBarClientListSize) != 0) && !isNaN((parseInt(obj.statusData.statusBarClientListSize)))) {
+							var primaryClientListSize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+							var guestClientListSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+							var counts = "";
+							var totalAllowedClients = parseInt(obj.statusData.statusBarMaxWiFiClientListSize);
+							var totalConnectedClients = primaryClientListSize;
+							if (( typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") && (parseInt(obj.statusData.statusBarGuestWifiEnabled) > 0) ) {
+								totalConnectedClients = totalConnectedClients + guestClientListSize;
+							}
+							if (totalConnectedClients >= totalAllowedClients) {
+								updateMobileBadge($navConnDev, 'Max'); // Max
+							} else {
+								updateMobileBadge($navConnDev, totalConnectedClients);
+							}
+						}
+					}
+
+					if(typeof obj.statusData.statusBarSmsUnreadCount !== "undefined") {
+						updateMobileBadge($navSMS, obj.statusData.statusBarSmsUnreadCount);
+					}
+				} catch(e) {}
+			}
+		});
+	});
+
+	function updateMobileBadge($el, count)
+	{
+		var theCount = (count) ? count : 0;
+		var $linkWrap = $el.find(".linkWrap");
+		$linkWrap.find(".badge").remove();
+		if( (theCount > 0) || isNaN(theCount) ) {
+			$linkWrap.append('<span class="badge">' + theCount + '</span>');
+		}
+	}
+	/* ]]> */
+</script>
+
+<ul id="mobile_navigation_ext" class="level-1">
+	<li class="menuitem menu-home-mobile first">
+		<a href="/" class="linkWrap menu-home-mobile">My MiFi Home</a>
+	</li>
+	
+		
+			<li class="logout">
+				<a>Sign Out</a>
+			</li>
+		
+	
+	
+		<li class="mobile_help">
+			<a title=' Help' class="helpLink parent" href="&#x2F;diagnostics&#x2F;help&#x2F;">Help</a>
+		</li>
+	
+	<li class="admin_settings">
+		<a>Admin Settings</a>
+	</li>
+	<li class="restart_jetpack">
+		<a>Restart Device</a>
+	</li>
+	
+		<li id="messages">
+			<a>Messages</a>
+		</li>
+	
+
+</ul>
+
+
+		
+	<ul id="mobile_navigation" class="level-1">
+		<li class="menuitem menu-home first
+			
+		">
+				<a href="&#x2F;" class="linkWrap menu-home">
+				 Home
+				</a>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem data-usage
+			
+		">
+				<a href="&#x2F;datausage&#x2F;" class="linkWrap data-usage">
+				 Data Usage
+				</a>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem settings-hotspot parent
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		">
+				<a href="&#x2F;wifisettings&#x2F;" class="linkWrap settings-hotspot parent">
+				 Wi-Fi<span class="indicator
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		"></span>
+				</a>
+					
+						<ul class="level-2">
+								<li class="menuitem settings-hotspot-advanced
+			
+		">
+										<a href="&#x2F;wifisettings&#x2F;" class="linkWrap settings-hotspot-advanced">
+										Settings</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem settings-hotspot-primary
+			
+		">
+										<a href="&#x2F;wifi&#x2F;" class="linkWrap settings-hotspot-primary">
+										Primary Network</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem settings-hotspot-guest
+			
+		">
+										<a href="&#x2F;wifiguest&#x2F;" class="linkWrap settings-hotspot-guest">
+										Guest Network</a>
+											
+								</li>
+							</ul>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem connected-devices
+			
+		">
+				<a href="&#x2F;connecteddevices&#x2F;" class="linkWrap connected-devices">
+				 Connected Devices
+				</a>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem settings parent
+			
+				
+					
+				
+					
+				
+					
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				
+			
+		">
+				<a href="&#x2F;preferences&#x2F;" class="linkWrap settings parent">
+				 Settings<span class="indicator
+			
+				
+					
+				
+					
+				
+					
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				
+			
+		"></span>
+				</a>
+					
+						<ul class="level-2">
+								<li class="menuitem settings-preferences parent
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		">
+										<a href="&#x2F;preferences&#x2F;" class="linkWrap settings-preferences parent">
+										Preferences<span class="indicator
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		"></span></a>
+											
+												<ul class="level-3">
+														<li class="menuitem settings-device-preferences">
+															<a href="&#x2F;preferences&#x2F;" class="linkWrap settings-device-preferences">Device Preferences</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-notification-preferences">
+															<a href="&#x2F;notifications&#x2F;" class="linkWrap settings-notification-preferences">Notifications</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-user-preferences">
+															<a href="&#x2F;userpreferences&#x2F;" class="linkWrap settings-user-preferences">User Preferences</a>
+														</li>
+												</ul>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem status-updates
+			
+		">
+										<a href="&#x2F;softwareupdate&#x2F;" class="linkWrap status-updates">
+										Software Update</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem settings-device-sysbackup
+			
+		">
+										<a href="&#x2F;backup&#x2F;" class="linkWrap settings-device-sysbackup">
+										Backup and Restore</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem gps
+			
+		">
+										<a href="&#x2F;gps&#x2F;" class="linkWrap gps">
+										GPS</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem settings-advanced parent
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		">
+										<a href="&#x2F;advanced&#x2F;" class="linkWrap settings-advanced parent">
+										Advanced<span class="indicator
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+				
+				
+			
+		"></span></a>
+											
+												<ul class="level-3">
+														<li class="menuitem settings-advanced-bengal-advanced">
+															<a href="&#x2F;advanced&#x2F;" class="linkWrap settings-advanced-bengal-advanced">Advanced</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-mobile-wwan">
+															<a href="&#x2F;networks&#x2F;" class="linkWrap settings-mobile-wwan">Networks</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-mobile-dns">
+															<a href="&#x2F;manualdns&#x2F;" class="linkWrap settings-mobile-dns">Manual DNS</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-sim">
+															<a href="&#x2F;sim&#x2F;" class="linkWrap settings-advanced-sim">SIM</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-firewall">
+															<a href="&#x2F;firewall&#x2F;" class="linkWrap settings-advanced-firewall">Firewall</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-macfilter">
+															<a href="&#x2F;macfilter&#x2F;" class="linkWrap settings-advanced-macfilter">MAC Filter</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-lan">
+															<a href="&#x2F;lan&#x2F;" class="linkWrap settings-advanced-lan">LAN</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-port-filtering">
+															<a href="&#x2F;portfiltering&#x2F;" class="linkWrap settings-advanced-port-filtering">Port Filtering</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-port-forwarding">
+															<a href="&#x2F;portforwarding&#x2F;" class="linkWrap settings-advanced-port-forwarding">Port Forwarding</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-vpn">
+															<a href="&#x2F;vpn&#x2F;" class="linkWrap settings-advanced-vpn">VPN</a>
+														</li>
+												
+											
+												
+														<li class="menuitem settings-advanced-inseego-connect">
+															<a href="&#x2F;inseegoconnect&#x2F;" class="linkWrap settings-advanced-inseego-connect">Inseego Connect</a>
+														</li>
+												</ul>
+											
+								</li>
+							</ul>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem about parent
+			
+				
+				
+			
+				
+				 active
+			
+				
+				
+			
+				
+				
+			
+		">
+				<a href="&#x2F;internet&#x2F;" class="linkWrap about parent">
+				 About<span class="indicator
+			
+				
+				
+			
+				
+				 active
+			
+				
+				
+			
+				
+				
+			
+		"></span>
+				</a>
+					
+						<ul class="level-2">
+								<li class="menuitem status-current
+			
+		">
+										<a href="&#x2F;internet&#x2F;" class="linkWrap status-current">
+										Internet Status</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem status-diagnostics
+			
+		">
+										<a href="&#x2F;diagnostics&#x2F;" class="linkWrap status-diagnostics active">
+										Diagnostics</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem status-info
+			
+		">
+										<a href="&#x2F;mifiinfo&#x2F;" class="linkWrap status-info">
+										Device Info</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem status-logs
+			
+		">
+										<a href="&#x2F;logs&#x2F;" class="linkWrap status-logs">
+										Logs</a>
+											
+								</li>
+							</ul>
+					
+		</li>
+	
+
+		
+	
+		<li class="menuitem help parent last
+			
+				
+				
+			
+				
+				
+			
+		">
+				<a href="&#x2F;help&#x2F;" class="linkWrap help parent">
+				 Help<span class="indicator
+			
+				
+				
+			
+				
+				
+			
+		"></span>
+				</a>
+					
+						<ul class="level-2">
+								<li class="menuitem help_faq last
+			
+		">
+										<a href="&#x2F;help&#x2F;" class="linkWrap help_faq">
+										Help</a>
+											
+								</li>
+							
+					
+						
+								<li class="menuitem status-support last
+			
+		">
+										<a href="&#x2F;support&#x2F;" class="linkWrap status-support">
+										Customer Support</a>
+											
+								</li>
+							</ul>
+					
+		</li>
+	</ul><!-- /#mobile-navigation -->
+
+
+		</div>
+	</div> <!-- /#mobile_menu-->
+
+
+				<div id="main" role="main">
+					<div id="main_inner" class="clearfix">
+
+						<div id="sidebar" class="left">
+							<div id="sidebar_inner">
+								<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		// Monitor and update badge counts in menu.
+		var $navConnDev = $("#navigation li.connected-devices");
+		var $navSMS = $("#navigation li.messages");
+
+		$(document).ajaxSuccess(function(e, xhr, settings)
+		{
+			if((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+					if((typeof obj.statusData.statusBarMaxWiFiClientListSize !== "undefined") &&
+					   (typeof obj.statusData.statusBarClientListSize !== "undefined")) {
+						if((parseInt(obj.statusData.statusBarMaxWiFiClientListSize) != 0) && !isNaN((parseInt(obj.statusData.statusBarMaxWiFiClientListSize))) && (parseInt(obj.statusData.statusBarClientListSize) != 0) && !isNaN((parseInt(obj.statusData.statusBarClientListSize)))) {	 
+							var primaryClientListSize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+							var guestClientListSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+							var counts = "";
+							var totalAllowedClients = parseInt(obj.statusData.statusBarMaxWiFiClientListSize);
+							var totalConnectedClients = primaryClientListSize;
+							if (( typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") && (parseInt(obj.statusData.statusBarGuestWifiEnabled) > 0) ) {
+								totalConnectedClients = totalConnectedClients + guestClientListSize;
+							}
+							if (totalConnectedClients >= totalAllowedClients) {
+								updateBadge($navConnDev, 'Max'); // Max
+							} else {
+								updateBadge($navConnDev, totalConnectedClients);
+							}
+						}
+					}
+
+					if(typeof obj.statusData.statusBarSmsUnreadCount !== "undefined") {
+						updateBadge($navSMS, obj.statusData.statusBarSmsUnreadCount);
+					}
+				} catch(e) {}
+			}
+		});
+	});
+
+	function updateBadge($el, count)
+	{
+		var theCount = (count) ? count : 0;
+		var linkWrap = $el.find(".linkWrap");
+		$el.find("div.badge").remove();
+		linkWrap.removeClass("roomForBadge");
+		if( (theCount > 0) || isNaN(theCount) ) {
+			linkWrap.addClass("roomForBadge");
+			$el.prepend('<div class="badge">' + theCount + '</div>');
+		}
+	}
+	/* ]]> */
+</script>
+
+
+	<ul id="navigation" class="clearfix">
+	<li class="menuitem menu-home first
+	
+	
+	"><a href="&#x2F;" class="linkWrap menu-home">Home</a></li>
+	
+
+	
+	<li class="menuitem data-usage
+	
+	
+	"><a href="&#x2F;datausage&#x2F;" class="linkWrap data-usage">Data Usage</a></li>
+	
+
+	
+	<li class="menuitem settings-hotspot parent
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+	
+	"><a href="&#x2F;wifisettings&#x2F;" class="linkWrap settings-hotspot parent">Wi-Fi</a></li>
+	
+
+	
+	<li class="menuitem connected-devices
+	
+	
+	"><a href="&#x2F;connecteddevices&#x2F;" class="linkWrap connected-devices">Connected Devices</a></li>
+	
+
+	
+	<li class="menuitem settings parent
+	
+		
+			
+		
+			
+		
+			
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		
+	
+	
+	"><a href="&#x2F;preferences&#x2F;" class="linkWrap settings parent">Settings</a></li>
+	
+
+	
+	<li class="menuitem about parent
+	
+		
+		
+	
+		
+		 active
+	
+		
+		
+	
+		
+		
+	
+	
+	"><a href="&#x2F;internet&#x2F;" class="linkWrap about parent">About</a></li>
+	
+
+	
+	<li class="menuitem help parent last
+	
+		
+		
+	
+		
+		
+	
+	
+	"><a href="&#x2F;help&#x2F;" class="linkWrap help parent">Help</a></li>
+	</ul><!-- /#navigation -->
+
+
+							</div>
+						</div> <!-- /#sidebar-->
+
+						<div id="app_container">
+							<div id="app_inner">
+								<noscript>
+	<div id="noscript">
+		<h1>JavaScript must be Enabled</h1>
+		<p>JavaScript must be enabled in your browser.</p>
+	</div>
+</noscript>
+
+								<div id="app_content">
+									
+ 
+	
+	
+	
+	
+
+	
+	
+	
+ 
+	
+	
+	
+	
+
+	
+	
+	
+ 
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	 
+		
+	 
+		
+	 
+		
+	
+
+	
+	
+		
+	
+		
+	
+		
+	
+	
+		
+	
+		
+	
+		
+	
+ 
+	
+	
+	
+	
+
+	
+	
+	
+ 
+	
+	
+	
+		
+			
+				
+			
+				
+			
+				
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+	
+	 
+		
+	 
+		
+	 
+		
+	 
+		
+	 
+		
+	
+
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+		
+			
+		
+			
+		
+			
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+	
+ 
+	
+	
+	
+		
+			
+		
+	
+		
+			
+				
+				<div id="pageHeadRow" class="clearfix">
+					<div id="pageHeadCol">
+						
+								<h1 class="pageHead about parent">About</h1>
+						
+					</div>
+					
+						<a title='About Help' class="helpLink parent" href="&#x2F;diagnostics&#x2F;help&#x2F;"></a>
+					
+				</div>
+				
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	 
+		
+			 
+				<div class="tabs_container tier_1 tabs_4 ">
+					<div class="row clearfix">
+
+						<div id="tier1" class="arrow left-move"> < 
+						</div>
+
+						<div class="tabs clearfix">
+							<ul id="navigationTabsOne">
+				
+								<li class="tabitem status-current first">
+									<!-- <a href="&#x2F;internet&#x2F;">Internet StatusCT</a> -->
+									<a href="&#x2F;internet&#x2F;">Internet Status</a>
+								</li>
+
+				
+		
+	 
+		
+			
+								<li class="tabitem status-diagnostics active ">
+									<!-- <a href="&#x2F;diagnostics&#x2F;">DiagnosticsCT</a> -->
+									<a href="&#x2F;diagnostics&#x2F;">Diagnostics</a>
+								</li>
+
+				
+		
+	 
+		
+			
+								<li class="tabitem status-info">
+									<!-- <a href="&#x2F;mifiinfo&#x2F;">Device InfoCT</a> -->
+									<a href="&#x2F;mifiinfo&#x2F;">Device Info</a>
+								</li>
+
+				
+		
+	 
+		
+			
+								<li class="tabitem status-logs last">
+									<!-- <a href="&#x2F;logs&#x2F;">LogsCT</a> -->
+									<a href="&#x2F;logs&#x2F;">Logs</a>
+								</li>
+
+				 
+							</ul>
+							
+						</div>
+
+						<div id="tier1" class="arrow right-move"> > </div>
+				<!--	
+							<a title='About Help' class="helpLink parent" href="&#x2F;diagnostics&#x2F;help&#x2F;"></a>
+						 -->
+
+					</div>
+
+					<div class="tier_1_content clearfix">
+			
+		
+	
+
+	
+	
+		
+	
+		
+			
+					
+
+	
+
+	
+		
+			<script type="text/javascript">
+				/* <![CDATA[ */
+				$(function()
+				{
+					$("#fieldTestBtn").on("click", function(){
+						window.open("/fieldtest/");
+					});
+				});
+				/* ]]> */
+			</script>
+		
+	
+
+	<p class="note">
+		 
+	</p>
+
+	<fieldset class="first">
+		<h2 class="sectionHead">Modem</h2>
+		<div class="table noblock">
+		
+			<div class="form-group">
+				<div class="label">
+					Mobile number (MDN):
+				</div>
+				<div class="input" x-ms-format-detection="none" id="modemInfoPhoneNumber">
+					
+				</div>
+			</div>
+		
+
+			<div class="form-group">
+				<div class="label">
+					IMEI:
+				</div>
+				<div class="input" id="modemInfoIMEI">
+					9900 1659 0030 514
+				</div>
+			</div>
+
+		
+			<div class="form-group">
+				<div class="label">
+					IMEISV:
+				</div>
+				<div class="input" id="modemInfoIMEISV">
+					9900 1659 0030 5103
+				</div>
+			</div>
+		
+
+		
+
+		
+
+			<div class="form-group">
+				<div class="label">
+					FW Version:
+				</div>
+				<div class="input" id="modemInfoFwVersion">
+					SDX55MOR-1.45  1  [2020-09-23 19:11:42]
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="label">
+					SIM Status:
+				</div>
+				<div class="input" id="simStatus">
+					Ready
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="label">
+					ICCID:
+				</div>
+				<div class="input" id="modemInfoICCID">
+					8981030001000133624
+				</div>
+			</div>
+
+		
+			
+			
+			
+
+			
+
+			
+		
+		</div><!-- /.table -->
+	</fieldset>
+
+	
+	<fieldset>
+		<h2 class="sectionHead">
+			
+				5G Network
+			
+		</h2>
+		<div class="table noblock">
+
+			<div class="form-group">
+				<div class="label">
+					Status:
+				</div>
+				<div class="input" id="internetStatus4G">
+					Connected
+				</div>
+			</div>
+
+			
+				<div class="form-group">
+					<div class="label">
+						Network Operator:
+					</div>
+					<div class="input" id="internetStatusNetworkOperator4G">
+						grape
+					</div>
+				</div>
+			
+
+			<div class="form-group">
+				<div class="label">
+					
+						Signal Strength:
+					
+				</div>
+				<div class="input" id="internetStatus4gRSSI">
+					-97 dBm
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="label">
+					
+						SNR:
+					
+				</div>
+				<div class="input" id="internetStatusSNR">
+					2 dB
+				</div>
+			</div>
+			
+				<div class="form-group">
+					<div class="label">
+						Band:
+					</div>
+					<div class="input" id="band">
+						41
+					</div>
+				</div>
+			
+
+			
+				<div class="form-group">
+					<div class="label">
+						Roaming:
+					</div>
+					<div class="input" id="internetStatus4gRoaming">
+						No
+					</div>
+				</div>
+			
+		</div><!-- /.table -->
+	</fieldset>
+	
+
+	
+
+	
+<!-- isHidden -->
+ 
+				</div>
+			</div>
+			
+		
+	
+		
+	
+		
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+ 
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	 
+		
+	 
+		
+	
+
+	
+	
+		
+	
+		
+	
+	
+		
+	
+		
+	
+
+
+								</div>
+							</div>
+						</div> <!-- /#app_container -->
+
+					</div>  <!-- /#main_inner -->
+				</div> <!-- /#main -->
+
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+
+		<div class="footer">
+	<div class="footer_inner">
+		<div class="col logo_device" class="logoDevice">
+			<a id="inseegoLogo" href="http://www.inseego.com/" title="Inseego">
+				<img src="/09140907/images/logos/footer_logo.png" alt="Inseego" />
+			</a>
+		</div><!-- /.logo_device -->
+		<div class="col copyright">
+			<p>&copy; <span id="copyYear"></span> All rights reserved.</p>
+		</div><!-- /.copyright -->
+		<div class="col mifi_device">
+			<a id="inseegoUrl" href="http://www.inseego.com/" title="InseegoUrl">
+				<p id="powered">www.inseego.com</p>
+			</a>
+		</div>		
+	</div><!-- /.footer_inner -->
+</div><!-- /.footer -->
+
+	</body>
+</html>
