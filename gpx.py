@@ -11,7 +11,12 @@ class GpxElementTree():
         #self.trkpts = []
         self.logs = []
 
-    def readGpx(self, path):
+    def readFiles(self, globPattern):
+        filePaths = glob.glob(globPattern)
+        for filePath in filePaths:
+            self.readFile(filePath)
+
+    def readFile(self, path):
         self.path = path
         self.dirname = os.path.dirname(path)
         self.basename = os.path.basename(path)
@@ -62,10 +67,8 @@ class GpxElementTree():
         return candidate
 
 if __name__ == "__main__":
-    gpxPaths = glob.glob("gpx/*.gpx")
     gpxElementTree = GpxElementTree()
-    for x in gpxPaths:
-        gpxElementTree.readGpx(x)
+    gpxElementTree.readFiles("gpx/*.gpx")
 
     maxLat = 33.85267376174127
     minLon = 132.76945182276026
