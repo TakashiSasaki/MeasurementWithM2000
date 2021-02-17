@@ -6,7 +6,7 @@ import os.path
 import datetime
 import numpy
 
-class GpxElementTree():
+class GpxPoints():
     def __init__(self) -> None:
         #self.trkpts = []
         self.logs = []
@@ -67,14 +67,14 @@ class GpxElementTree():
         return candidate
 
 if __name__ == "__main__":
-    gpxElementTree = GpxElementTree()
-    gpxElementTree.readFiles("gpx/*.gpx")
+    gpxPoints = GpxPoints()
+    gpxPoints.readFiles("gpx/*.gpx")
 
     maxLat = 33.85267376174127
     minLon = 132.76945182276026
     minLat = 33.84739214519674
     maxLon = 132.77565640743407
-    gpxElementTree.crop(minLat, maxLat, minLon, maxLon)
+    gpxPoints.crop(minLat, maxLat, minLon, maxLon)
     dt = datetime.datetime(2021, 2, 13, 7, 19, 10, 1, datetime.timezone.utc)
-    print (gpxElementTree.getLogByDateTime(dt))
-    print("diff = %d" % ((gpxElementTree.getLogByDateTime(dt)[3] - dt).total_seconds()))
+    print (gpxPoints.getLogByDateTime(dt))
+    print("diff = %d" % ((gpxPoints.getLogByDateTime(dt)[3] - dt).total_seconds()))
