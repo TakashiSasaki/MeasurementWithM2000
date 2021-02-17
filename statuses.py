@@ -9,9 +9,8 @@ class Statuses:
         self.statuses = []
         pass
 
-    def readFiles(self, dirPath):
-        filesPattern = os.path.join(dirPath + "/*.*")
-        filePaths = glob.glob(filesPattern)
+    def readFiles(self, globPattern):
+        filePaths = glob.glob(globPattern)
         #print(len(filePaths))
         for filePath in filePaths:
             f = open(filePath)
@@ -50,5 +49,5 @@ class Statuses:
 import glob
 if __name__ == "__main__":
     statuses = Statuses()
-    statuses.readFiles("status")
+    statuses.readFiles("status/*")
     print(len(statuses))
