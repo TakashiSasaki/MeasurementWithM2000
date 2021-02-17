@@ -9,7 +9,7 @@ import numpy
 class GpxPoints():
     def __init__(self) -> None:
         #self.trkpts = []
-        self.logs = []
+        self.points = []
 
     def readFiles(self, globPattern):
         filePaths = glob.glob(globPattern)
@@ -35,21 +35,21 @@ class GpxPoints():
             speed = float((lambda x : 0 if x is None else x.text)(x.find("{*}speed")))
             t = (lat, lon, ele, time, speed)
             #print(t)
-            self.logs.append(t)
+            self.points.append(t)
         
     def crop(self, minLat, maxLat, minLon, maxLon):
         assert(minLat <= maxLat and minLon <= maxLon)
         l = []
-        for x in self.logs:
+        for x in self.points:
             if(x[0] < minLat): continue
             if(x[0] > maxLat): continue
             if(x[1] < minLon): continue
             if(x[1] > maxLon): continue
             l.append(x)
-        self.logs = l
+        self.points = l
 
     def getDateTimes(self):
-        return [ x[3] for x in self.logs]
+        return [ x[3] for x in self.points]
     
     def getTimeDeltas(self, dt):
         return [ x - dt for x in self.getDateTimes()]
@@ -60,11 +60,14 @@ class GpxPoints():
         index = absarray.argmin()
         #index = numpy.abs(numpy.asarray(gpxElementTree.getTimeDeltas(dt)).argmin())
         #print(index)
-        candidate = self.logs[index]
+        candidate = self.points[index]
         delta = candidate[3] - dt
         if abs(delta.total_seconds())>60:
             raise Exception("no log near %d seconds around %s" %  (maxDiffSec, dt))
         return candidate
+    
+    def __len__(self):
+        return self.points.__len__()
 
 if __name__ == "__main__":
     gpxPoints = GpxPoints()
@@ -78,3 +81,4 @@ if __name__ == "__main__":
     dt = datetime.datetime(2021, 2, 13, 7, 19, 10, 1, datetime.timezone.utc)
     print (gpxPoints.getLogByDateTime(dt))
     print("diff = %d" % ((gpxPoints.getLogByDateTime(dt)[3] - dt).total_seconds()))
+    print(len(gpxPoints))
