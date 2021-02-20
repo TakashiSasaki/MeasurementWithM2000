@@ -2,3 +2,4 @@ status/*.json
 tcp-upload/*/*.log
 tcp-download/*/*.log
 *.pyc
+heatmap.html
