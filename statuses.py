@@ -21,8 +21,8 @@ class Statuses:
             if m is None: continue
             if len(m.groups()) != 3: continue
             #print(m.groups())
-            ss = m[1]
-            snr = m[2]
+            ss = float(m[1])
+            snr = float(m[2])
             band = m[3]
             #print(ss, snr, band)
             basename = os.path.basename(filePath)
@@ -36,9 +36,9 @@ class Statuses:
             DD = int(m[3])
             hh = int(m[4])
             mm = int(m[5])
-            ss = int(m[6])
+            sec = int(m[6])
             JST = datetime.timezone(datetime.timedelta(hours=+9), 'JST')
-            dt = datetime.datetime(YYYY,MM,DD,hh,mm,ss, 0, JST)
+            dt = datetime.datetime(YYYY,MM,DD,hh,mm,sec, 0, JST)
             #print(dt)
             status = (dt, ss, snr, band)
             self.statuses.append(status)
